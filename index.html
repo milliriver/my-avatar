@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  /* 呼吸动画 */
+  @keyframes breathe {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-0.5px); }
+    100% { transform: translateY(0); }
+  }
+  
+  /* 镜片反光 */
+  @keyframes glare {
+    0% { opacity: 0; left: -20px; }
+    20% { opacity: 0.4; }
+    100% { opacity: 0; left: 120px; }
+  }
+</style>
+</head>
+<body>
+  <svg width="240" height="360" viewBox="0 0 240 360">
+    <!-- 身体轮廓 -->
+    <path d="M120 280 L110 340 L130 340" fill="#2C2C2C"/>
+    
+    <!-- 头部 -->
+    <circle cx="120" cy="100" r="40" fill="#F5E6D3"/>
+    
+    <!-- 眼镜 -->
+    <rect x="70" y="90" width="100" height="30" rx="15" fill="none" stroke="#A0A0A0" stroke-width="2"/>
+    <line x1="90" y1="105" x2="150" y1="105" stroke="#A0A0A0" stroke-width="2"/>
+    
+    <!-- 卫衣 -->
+    <path d="M80 140 L160 140 L170 220 L70 220 Z" fill="#000" style="animation: breathe 3s infinite;">
+      <!-- 荆棘花纹 -->
+      <pattern id="thorns" patternUnits="userSpaceOnUse" width="20" height="20">
+        <path d="M0 20 L10 0 L20 20" stroke="#A00000" fill="none"/>
+      </pattern>
+    </path>
+    
+    <!-- 镜片反光 -->
+    <rect x="85" y="95" width="50" height="20" fill="white" opacity="0" style="animation: glare 8s infinite;">
+  </svg>
+</body>
+</html>
