@@ -1,1 +1,1 @@
-# my-avator
+# my-avatar
